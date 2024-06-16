@@ -1035,7 +1035,7 @@ function surge(content, url) {
 	  //var crypto = require('crypto')
 	  //var Buffer = require('buffer').Buffer;
 	  //import * as crypto from "crypto";
-	  const crypto = await import("crypto");
+	  const crypto = import("crypto");
 	  import { Buffer } from "buffer";
 		
 	  var algorithm = is224 ? 'sha224' : 'sha256';
