@@ -1,5 +1,5 @@
 name = "epeius"
-main = "worker.js"
-compatibility_date = "2024-05-03"
+main = "_worker.js"
+compatibility_date = "2024-06-16"
 workers_dev = true
 node_compat = true
