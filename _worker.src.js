@@ -599,7 +599,7 @@ async function getTrojanConfig(password, hostName, sub, UA, RproxyIP, _url) {
 		let surge = `Surge订阅地址:\nhttps://${hostName}/${password}?surge`;
 		if (hostName.includes(".workers.dev") || hostName.includes(".pages.dev")) surge = "Surge订阅必须绑定自定义域";
 		
-		let 订阅器 = `您的订阅内容由 ${sub} 提供维护支持, 自动获取ProxyIP: ${RproxyIP}`;
+		let 订阅器 = `您的订阅内容由 ${sub} 提供维护支持, 自动获取ProxyIP: ${RproxyIP}，AC定制Proxy： ${acProxyEnabled}`;
 		if (!sub || sub == '') {
 			if (!proxyIP || proxyIP =='') {
 				订阅器 = '您的订阅内容由 内置 addresses/ADD 参数提供, 当前使用的ProxyIP为空, 推荐您设置 proxyIP/PROXYIP ！！！';
@@ -609,7 +609,6 @@ async function getTrojanConfig(password, hostName, sub, UA, RproxyIP, _url) {
 		} else if (RproxyIP != 'true'){
 			订阅器 += `, 当前使用的ProxyIP： ${proxyIPs.join(',')}`;
 		}
-		订阅器 += `, AC定制Proxy： ${acProxyEnabled.join(',')}`;
 		return `
 ################################################################
 Subscribe / sub 订阅地址, 支持 Base64、clash-meta、sing-box 订阅格式, ${订阅器}
