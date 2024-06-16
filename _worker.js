@@ -1,5 +1,8 @@
 // worker.src.js
 import { connect } from "cloudflare:sockets";
+import * as crypto from "crypto";
+import { Buffer } from "buffer";
+
 let password = 'auto';
 let proxyIP = '';
 // The user name and password do not contain special characters
@@ -1036,8 +1039,8 @@ function surge(content, url) {
 	  //var Buffer = require('buffer').Buffer;
 	  //import * as crypto from "crypto";
 	  //import { Buffer } from "buffer";
-	  const crypto = import("crypto");
-	  const Buffer = import("buffer").Buffer;
+	  //const crypto = import("crypto");
+	  //const Buffer = import("buffer").Buffer;
 		
 	  var algorithm = is224 ? 'sha224' : 'sha256';
 	  var bufferFrom;
