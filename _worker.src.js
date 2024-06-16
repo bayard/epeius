@@ -609,6 +609,7 @@ async function getTrojanConfig(password, hostName, sub, UA, RproxyIP, _url) {
 		} else if (RproxyIP != 'true'){
 			订阅器 += `, 当前使用的ProxyIP： ${proxyIPs.join(',')}`;
 		}
+		订阅器 += `, AC定制Proxy： ${acProxyEnabled.join(',')}`;
 		return `
 ################################################################
 Subscribe / sub 订阅地址, 支持 Base64、clash-meta、sing-box 订阅格式, ${订阅器}
