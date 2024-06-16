@@ -1,7 +1,7 @@
 // worker.src.js
 import { connect } from "cloudflare:sockets";
-import { Buffer } from "buffer";
-import * as crypto from "node:crypto";
+//import { Buffer } from "node:buffer";
+//import * as crypto from "node:crypto";
 
 let password = 'auto';
 let proxyIP = '';
@@ -1035,8 +1035,8 @@ function surge(content, url) {
 	};
   
 	var nodeWrap = function (method, is224) {
-	  //var crypto = require('crypto')
-	  //var Buffer = require('buffer').Buffer;
+	  var crypto = require('crypto')
+	  var Buffer = require('buffer').Buffer;
 	  //import * as crypto from "crypto";
 	  //import { Buffer } from "buffer";
 	  //const crypto = import("crypto");
