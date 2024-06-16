@@ -51,9 +51,13 @@ if (!isValidSHA224(sha224Password)) {
 let parsedSocks5Address = {}; 
 let enableSocks = false;
 
+let acProxyEnabled = false;
+let acProxyPort = 65543;
+
 export default {
 	async fetch(request, env, ctx) {
 		try {
+			acProxyEnabled = env.ACPROXY_ENABLED || 'false';
 			const UA = request.headers.get('User-Agent') || 'null';
 			const userAgent = UA.toLowerCase();
 			proxyIP = env.PROXYIP || proxyIP;
@@ -381,7 +385,14 @@ async function handleTCPOutBound(remoteSocket, addressRemote, portRemote, rawCli
 		if (enableSocks) {
 			tcpSocket2 = await connectAndWrite(addressRemote, portRemote, true);
 		} else {
-			tcpSocket2 = await connectAndWrite(proxyIP || addressRemote, portRemote);
+			if(acProxyEnabled)
+			{
+				tcpSocket2 = await connectAndWrite(proxyIP || addressRemote, acProxyPort);
+			}
+			else
+			{
+				tcpSocket2 = await connectAndWrite(proxyIP || addressRemote, portRemote);
+			}
 		}
 		tcpSocket2.closed.catch((error) => {
 			console.log("retry tcpSocket closed error", error);
