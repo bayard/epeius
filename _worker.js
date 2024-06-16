@@ -1,7 +1,7 @@
 // worker.src.js
 import { connect } from "cloudflare:sockets";
-import * as crypto from "node:crypto";
 import { Buffer } from "node:buffer";
+import * as crypto from "node:crypto";
 
 let password = 'auto';
 let proxyIP = '';
