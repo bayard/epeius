@@ -1,6 +1,6 @@
 // worker.src.js
 import { connect } from "cloudflare:sockets";
-import { Buffer } from "node:buffer";
+import { Buffer } from "buffer";
 import * as crypto from "node:crypto";
 
 let password = 'auto';
