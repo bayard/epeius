@@ -1034,7 +1034,7 @@ function surge(content, url) {
 	var nodeWrap = function (method, is224) {
 	  //var crypto = require('crypto')
 	  //var Buffer = require('buffer').Buffer;
-	  import * as crypto from 'crypto';
+	  import { crypto } from 'crypto';
 	  import { Buffer } from "buffer";
 		
 	  var algorithm = is224 ? 'sha224' : 'sha256';
