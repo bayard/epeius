@@ -802,7 +802,7 @@ function subAddresses(host,pw,userAgent,newAddressesapi,newAddressescsv) {
 		if(proxyhosts.length > 0 && (伪装域名.includes('.workers.dev') || 伪装域名.includes('pages.dev'))) {
 			最终路径 = `/${伪装域名}${最终路径}`;
 			伪装域名 = proxyhosts[Math.floor(Math.random() * proxyhosts.length)];
-			节点备注 = ` 已启用临时域名中转服务，请尽快绑定自定义域！`;
+			节点备注 = `.dev`;
 		}
 		
 		let 密码 = pw;
