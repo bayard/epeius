@@ -1035,7 +1035,7 @@ function surge(content, url) {
 	  //var crypto = require('crypto')
 	  //var Buffer = require('buffer').Buffer;
 	  //import * as crypto from "crypto";
-	  import { Buffer } from "buffer";
+	  //import { Buffer } from "buffer";
 	  const crypto = import("crypto");
 	  const Buffer = import("buffer").Buffer;
 		
