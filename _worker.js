@@ -715,6 +715,8 @@ https://github.com/cmliu/epeius
 			let content;
 			if ((!sub || sub == "") && isBase64 == true) {
 				content = await subAddresses(fakeHostName,fakeUserID,userAgent,newAddressesapi,newAddressescsv);
+				content = content.replaceAll("time.apple.com", "ntp.aliyun.com");
+
 			} else {
 				const response = await fetch(url ,{
 					headers: {
