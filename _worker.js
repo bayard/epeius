@@ -723,11 +723,13 @@ https://github.com/cmliu/epeius
 						'User-Agent': `CF-Workers-epeius/cmliu`
 					}});
 				content = await response.text();
+				content = content.replaceAll("time.apple.com", "ntp.aliyun.com");
 			}
 
 			if (!_url.pathname.includes(`/${fakeUserID}`)) {
 				content = revertFakeInfo(content, password, hostName, isBase64);
 				if (userAgent.includes('surge') || _url.searchParams.has('surge')) content = surge(content, `https://${hostName}/${password}?surge`);	
+				content = content.replaceAll("time.apple.com", "ntp.aliyun.com");
 			} 
 			return content;
 		} catch (error) {
